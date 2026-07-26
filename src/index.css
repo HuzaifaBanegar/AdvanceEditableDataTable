@@ -1,7 +1,30 @@
-:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #202124; background: #f7f7f7; }
-:root[data-theme='dark'] { color: #e7e7e7; background: #181818; }
-* { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; }
-button, input, select { font: inherit; }
-button { cursor: pointer; }
-button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  color: #202124;
+  background: #f7f7f7;
+}
+:root[data-theme="dark"] {
+  color: #e7e7e7;
+  background: #181818;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}

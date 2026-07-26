@@ -185,7 +185,7 @@ The following items are intentionally not implemented or would require additiona
 - **No server-side sorting, filtering, or pagination.** Client-side operations are suitable for the supplied 10,000-row mock dataset. Very large datasets should move these operations to an API/database.
 - **Single-column sorting only.** The PRD lists multi-column sorting as optional; the delivered UI supports one active sortable column at a time.
 - **No dedicated numeric range filters.** Search matches numeric values as text, and department has a dedicated filter. Salary/quantity min-max controls could be added if required.
-- **Basic validation only.** Required text and numeric values are checked before saving, but field-level error messages and formal email validation are not included.
+- **Basic validation only.** Required text and numeric values are checked before saving, but field-level error messages and formal email validation are not included. For Department & Status it would have been better to have fixed dropdowns instead of text box 
 - **Undo is per row and in-memory.** It restores prior saves in the current browser session only; there is no global redo or persistent history.
 - **Virtualization assumes fixed row height.** This keeps the implementation simple and fast; rows that dynamically grow in height would need a measured virtualization solution.
 - **No automated tests are included.** The application has been checked with `npm run build` and `npm run lint`, but unit, integration, and end-to-end tests remain future work.
@@ -200,3 +200,12 @@ The following items are intentionally not implemented or would require additiona
 5. Add unit tests for the reducer and utilities, component tests for editing, and end-to-end tests for the complete table workflow.
 6. Use server-driven pagination/filtering/sorting for substantially larger datasets.
 7. Replace fixed-height virtualization with measured rows if multiline or expandable content is introduced.
+
+
+## Tech stacks used:
+1. React + TypeScript + Vite
+2. TanStack Table for sorting, filtering, pagination, and column definitions
+3. TanStack Virtual for virtual scrolling
+4. Context + useReducer for table data, edits, undo, and dirty-state tracking
+5. Custom CSS for a polished, task-specific result
+6. papaparse or native Blob generation for CSV export
